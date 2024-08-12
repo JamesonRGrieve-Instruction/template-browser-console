@@ -15,11 +15,11 @@ function output(string, type = "normal") {
   if (type !== "normal") {
     newP.classList.add(type);
   }
-  if (text.includes("Console.Clear()") || inputBar.value === "Console.Clear()") {
+  if (text.toLowerCase().includes("console.clear()") || inputBar.value.toLowerCase() === "console.clear()") {
     while (document.querySelector("#output").firstChild) {
       document.querySelector("#output").removeChild(document.querySelector("#output").firstChild);
-      newP.innerText = "";
     }
+    newP.innerText = "";
   }
   
   document.querySelector("#output").appendChild(newP);

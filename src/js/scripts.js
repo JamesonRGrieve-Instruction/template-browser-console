@@ -11,5 +11,5 @@ async function main() {
     output("Hello, " + name + "!");
     name = await input(prompt);
   }
-  output("Console.Clear()");
+  
 }
