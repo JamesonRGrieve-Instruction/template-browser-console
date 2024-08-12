@@ -15,6 +15,13 @@ function output(string, type = "normal") {
   if (type !== "normal") {
     newP.classList.add(type);
   }
+  if (text.includes("Console.Clear()") || inputBar.value === "Console.Clear()") {
+    while (document.querySelector("#output").firstChild) {
+      document.querySelector("#output").removeChild(document.querySelector("#output").firstChild);
+      newP.innerText = "";
+    }
+  }
+  
   document.querySelector("#output").appendChild(newP);
 }
 // eslint-disable-next-line no-unused-vars
